@@ -21,10 +21,18 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.css",
+              {
+                "input": "src/lara-light.css",
+                "bundleName": "lara-light",
+                "inject": false
+              },
+              {
+                "input": "src/lara-dark.css",
+                "bundleName": "lara-dark",
+                "inject": false
+              },
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeflex/primeflex.css",
-              "node_modules/primeng/resources/themes/aura-dark-lime/theme.css",
-              "node_modules/primeng/resources/themes/aura-light-lime/theme.css"
+              "node_modules/primeflex/primeflex.css"
             ],
             "scripts": []
           },

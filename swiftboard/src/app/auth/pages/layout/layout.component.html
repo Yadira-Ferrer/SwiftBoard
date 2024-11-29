@@ -1,1 +1,28 @@
-<div class="container"></div>
+<div id="container">
+  <div class="form-wrapper">
+    <div>
+      <div class="logo-wrapper">
+        <img class="logo" src="" alt="" />
+      </div>
+      <h1>{{ title }}</h1>
+      <p class="secondary-text">
+        {{ subtitle }}
+        <span class="highlight" *ngIf="!showLogin">{{ email }}</span>
+      </p>
+    </div>
+
+    <app-login
+      (onLoginSubmit)="changeForm($event)"
+      *ngIf="showLogin"
+    ></app-login>
+    <app-otp (onBackToLogin)="changeForm($event)" *ngIf="!showLogin"></app-otp>
+
+    <p class="footer-text">
+      <i
+        class="pi pi-asterisk"
+        style="font-size: 0.75rem; margin-right: 8px"
+      ></i
+      >Creado para evitar postergar... Bueno, casi siempre.
+    </p>
+  </div>
+</div>

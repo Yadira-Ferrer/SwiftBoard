@@ -1,0 +1,52 @@
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  width: 100%;
+  background: var(--input-bg);
+}
+
+:host ::ng-deep .p-inputtext {
+  background: var(--input-bg);
+}
+
+:host ::ng-deep .p-button {
+  font-family: "Kanit", sans-serif;
+  width: 100%;
+}
+
+:host ::ng-deep .p-inputotp {
+  justify-content: space-around;
+}
+
+.resend-section {
+  text-align: right;
+}
+
+.resend-counter {
+  color: var(--text-color-secondary);
+  font-weight: 300;
+  font-size: small;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: center;
+}
+
+.back-option {
+  color: var(--text-color-secondary);
+  font-weight: 300;
+  font-size: small;
+  cursor: pointer;
+  text-align: center;
+  margin: 5px;
+}
+
+.back-option:hover {
+  font-weight: 400;
+  color: var(--primary-700);
+}

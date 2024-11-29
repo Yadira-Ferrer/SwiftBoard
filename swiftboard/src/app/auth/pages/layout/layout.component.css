@@ -1,4 +1,64 @@
-.container {
-  width: 100%;
-  background: var(--surface-ground);
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--surface-ground);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  font-family: "Kanit", sans-serif;
+  background-image: var(--gradient-bg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  margin-bottom: 0px;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+.logo-wrapper {
+  display: flex;
+}
+
+.form-wrapper {
+  width: 90%;
+  max-width: 450px;
+  background-color: var(--surface-section);
+  padding: 3rem 4rem;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--glass-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.4px);
+  -webkit-backdrop-filter: blur(7.4px);
+  border: 1px solid var(--glass-border);
+}
+
+.logo {
+  content: var(--icon);
+  width: 64px;
+}
+
+.secondary-text {
+  margin: 8px 0 0;
+  color: var(--text-color-secondary);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.highlight {
+  color: var(--primary-color);
+}
+
+.footer-text {
+  color: var(--text-color-secondary);
+  text-align: center;
+  font-family: "Catamaran", sans-serif;
 }
