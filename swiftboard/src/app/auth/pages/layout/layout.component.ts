@@ -35,9 +35,11 @@ export class LayoutComponent implements OnInit {
     if (value) {
       this.title = 'SwiftBoard';
       this.subtitle = 'Simplifica tus tareas, acelera tus resultados.';
+      this.email = '';
     } else {
       this.title = 'Ingresa el código OTP';
       this.subtitle = 'Un código OTP ha sido enviado al correo';
+      this.email = this.authService.User;
     }
     this.showLogin = value;
   }

@@ -25,7 +25,7 @@ export class LoginComponent {
       if (response.status === 'SIGN_IN_UP_NOT_ALLOWED') {
         this.message = response.reason;
       } else {
-        this.authService.User = this.email;
+        this.authService.User = email;
         this.onLoginSubmit.emit(false);
       }
     } catch (err: any) {

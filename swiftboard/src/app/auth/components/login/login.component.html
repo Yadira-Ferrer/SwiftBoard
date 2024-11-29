@@ -3,9 +3,10 @@
     <p-inputIcon styleClass="pi pi-envelope" />
     <input
       type="email"
-      pInputText
       placeholder="Correo Electrónico"
       [(ngModel)]="email"
+      (keydown.enter)="sendOTP()"
+      pInputText
     />
   </p-iconField>
   <p-button label="Continuar" (click)="sendOTP()" />

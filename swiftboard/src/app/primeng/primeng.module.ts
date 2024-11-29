@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
 import { ButtonModule } from 'primeng/button';
+import { ChipModule } from 'primeng/chip';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
@@ -12,7 +15,10 @@ import { MessagesModule } from 'primeng/messages';
   declarations: [],
   imports: [CommonModule],
   exports: [
+    AvatarModule,
+    AvatarGroupModule,
     ButtonModule,
+    ChipModule,
     IconFieldModule,
     InputIconModule,
     InputTextModule,
