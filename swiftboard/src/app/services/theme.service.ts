@@ -7,11 +7,17 @@ import { Inject, Injectable } from '@angular/core';
 export class ThemeService {
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
-  switchTheme(theme: string) {
+  switchTheme() {
     let themeLink = this.document.getElementById(
       'app-theme'
     ) as HTMLLinkElement;
 
-    if (themeLink) themeLink.href = theme + '.css';
+    if (themeLink) {
+      const currentTheme = themeLink.getAttribute('href');
+      themeLink.href = currentTheme?.includes('dark')
+        ? 'lara-light.css'
+        : 'lara-dark.css';
+      /* themeLink.href = theme + '.css'; */
+    }
   }
 }

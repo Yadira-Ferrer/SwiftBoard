@@ -1,11 +1,19 @@
 <div class="login-wrapper">
   <p-iconField iconPosition="left">
     <p-inputIcon styleClass="pi pi-envelope" />
-    <input type="email" pInputText placeholder="Correo Electrónico" />
+    <input
+      type="email"
+      pInputText
+      placeholder="Correo Electrónico"
+      [(ngModel)]="email"
+    />
   </p-iconField>
   <p-button label="Continuar" (click)="sendOTP()" />
 
-  <div class="message error" *ngIf="message.length > 0">
+  <div
+    class="message p-inline-message p-inline-message-error"
+    *ngIf="message.length > 0"
+  >
     <p class="message-text">
       <i class="fa-solid fa-circle-exclamation"></i>{{ message }}
     </p>

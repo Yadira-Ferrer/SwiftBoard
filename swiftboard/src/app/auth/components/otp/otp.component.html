@@ -1,15 +1,21 @@
 <div class="login-wrapper">
   <div class="resend-section">
     <!-- Mostrar el contador cuando está activo -->
-    <!-- <span *ngIf="isCounterActive" class="resend-counter">
+    <span *ngIf="isCounterActive" class="resend-counter">
       Resend in {{ counter }}
-    </span> -->
+    </span>
 
     <!-- Mostrar el botón de reenvío cuando el contador llega a cero -->
-    <a class="resend-counter"> Reenviar Correo </a>
+    <a
+      class="resend-counter"
+      *ngIf="!isCounterActive"
+      (click)="handleResendOTP()"
+    >
+      Reenviar Correo
+    </a>
   </div>
   <p-inputOtp [(ngModel)]="otpcode" [length]="6" [integerOnly]="true" />
-  <p-button label="Continuar" />
+  <p-button label="Enviar" (click)="handleOTPInput()" />
   <p class="back-option" (click)="backToLogin()">
     <i
       class="pi pi-arrow-left"
@@ -18,7 +24,10 @@
     Utilizar otro correo electrónico
   </p>
 
-  <div class="message error" *ngIf="message.length > 0">
+  <div
+    class="message p-inline-message p-inline-message-error"
+    *ngIf="message.length > 0"
+  >
     <p class="message-text">
       <i class="fa-solid fa-circle-exclamation"></i>{{ message }}
     </p>

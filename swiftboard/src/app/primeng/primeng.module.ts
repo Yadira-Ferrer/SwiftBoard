@@ -6,6 +6,7 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputOtpModule } from 'primeng/inputotp';
+import { MessagesModule } from 'primeng/messages';
 
 @NgModule({
   declarations: [],
@@ -16,6 +17,7 @@ import { InputOtpModule } from 'primeng/inputotp';
     InputIconModule,
     InputTextModule,
     InputOtpModule,
+    MessagesModule,
   ],
 })
 export class PrimengModule {}

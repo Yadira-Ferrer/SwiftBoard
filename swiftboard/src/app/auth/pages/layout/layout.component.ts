@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { getLoginAttemptInfo } from 'supertokens-web-js/recipe/passwordless';
+import { AuthService } from '../../../services/auth.service';
 import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
@@ -6,17 +10,25 @@ import { ThemeService } from 'src/app/services/theme.service';
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css'],
 })
-export class LayoutComponent {
+export class LayoutComponent implements OnInit {
   title = 'SwiftBoard';
   subtitle = 'Simplifica tus tareas, acelera tus resultados.';
   showLogin = true;
 
-  email = 'example@email.com';
+  email = '';
 
-  constructor(private themeService: ThemeService) {}
+  constructor(
+    private themeService: ThemeService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
-  changeTheme(theme: string) {
-    this.themeService.switchTheme(theme);
+  async ngOnInit() {
+    this.email = this.authService.User;
+  }
+
+  changeTheme() {
+    this.themeService.switchTheme();
   }
 
   changeForm(value: boolean) {
@@ -28,5 +40,9 @@ export class LayoutComponent {
       this.subtitle = 'Un código OTP ha sido enviado al correo';
     }
     this.showLogin = value;
+  }
+
+  async hasInitialOTPBeenSent() {
+    return (await getLoginAttemptInfo()) !== undefined;
   }
 }
